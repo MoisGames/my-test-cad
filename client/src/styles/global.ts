@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+const GlobalStyles = createGlobalStyle
+export default GlobalStyles`
+@font-face {
+    font-family: "Inter"; 
+    src: url("./assets/fonts/inter.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
 
 *,
 *::before,
@@ -8,6 +15,5 @@ export default createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
+},
 `
