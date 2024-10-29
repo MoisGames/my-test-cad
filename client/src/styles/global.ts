@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle
+
 export default GlobalStyles`
 @font-face {
     font-family: "Inter"; 
@@ -16,4 +17,5 @@ export default GlobalStyles`
   padding: 0;
   box-sizing: border-box;
 },
+
 `
