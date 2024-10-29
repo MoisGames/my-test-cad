@@ -8,7 +8,7 @@ const FooterComponent = styled.footer `
         width: 65vw;
         ${borderLine}
     `
-    const WrapperFooter = styled.article `
+    const WrapperFooter = styled.section `
         display: flex;
         justify-content: center;
         align-items: center;

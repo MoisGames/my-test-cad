@@ -2,16 +2,16 @@ import styled from "styled-components";
 import ButtonContacts from "../button/ButtonContacts";
 
 const HeaderComponent = styled.header `
-        position: fixed;
-        left: 0;
-        right: 0;
+        display: flex;
         width: 65vw;
     `
-    const WrapperHeader = styled.main `
-        
+    const WrapperHeader = styled.section `
+        display: flex;
+        justify-content: space-between;
+        width: 65vw;
     `
-    const Title = styled.h5 `
-
+    const Title = styled.h1 `
+        font-size: 18px;
         margin: 20px;
     `
 
@@ -23,8 +23,10 @@ const Header = () => {
                 <Title>
                     Some Company
                 </Title>
-                <ButtonContacts 
-                    title="Contact us"/>
+                <nav>
+                    <ButtonContacts 
+                        title="Contact us"/>
+                </nav>
             </WrapperHeader>
         </HeaderComponent>
     );
