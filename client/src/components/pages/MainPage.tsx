@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { 
     backgroundDarkGrey,
             backgroundLightGrey, 
-            borderLine } from '../../styles/baseLayout';
+            borderLine, 
+            colorLightGrey} from '../../styles/baseLayout';
+import ButtonContacts from '../UI/button/ButtonContacts';
 
 const Main = styled.main `
         display: flex;
@@ -44,29 +46,44 @@ const SectionParagraph = styled.section `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 35px;
+    margin-top: 35px;
 `
 const TwoMainHead = styled.h2 `
     
 `
 const ParagraphWrapper = styled.div `
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 62.5vw;
+    margin-top: 80px;
     width: 60vw;
     height: 40vh;
-    border: 3px solid violet;
 `
 const ParagraphCard = styled.article `
-    
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    height: 10vh;
+    margin: 40px;
+`
+const CardTitle = styled.h4 `
+    font-size: 19px;
+    margin-bottom: 10px;
+`
+
+const CardDesc = styled.span `
+    font-size: 13px;
+    ${colorLightGrey};
 `
 interface CardInfo {
     id: number,
     title: string,
     description: string,
 }
-const cardInfoObj: CardInfo[] = [
+const cardInfoArr: CardInfo[] = [
     {
     'id': 1,
-    'title': 'afas',
+    'title': 'Title',
     'description': 
         `Lorem ipsum dolor sit amet,
         consectetur adipiscing elit. 
@@ -74,7 +91,7 @@ const cardInfoObj: CardInfo[] = [
     },
     {
         'id': 2,
-        'title': 'afas',
+        'title': 'Title',
         'description': 
             `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. 
@@ -82,7 +99,7 @@ const cardInfoObj: CardInfo[] = [
     },
     {
         'id': 3,
-        'title': 'afas',
+        'title': 'Title',
         'description': 
             `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. 
@@ -90,7 +107,7 @@ const cardInfoObj: CardInfo[] = [
     },
     {
         'id': 4,
-        'title': 'afas',
+        'title': 'Title',
         'description': 
         `Lorem ipsum dolor sit amet,
         consectetur adipiscing elit. 
@@ -98,7 +115,7 @@ const cardInfoObj: CardInfo[] = [
     },
     {
         'id': 5,
-        'title': 'afas',
+        'title': 'Title',
         'description': 
             `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. 
@@ -106,12 +123,26 @@ const cardInfoObj: CardInfo[] = [
     },
     {
         'id': 6,
-        'title': 'afas',
+        'title': 'Title',
         'description': 
             `Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. 
             Aliquam mattis, leo et condimentum`,
     },]
+
+const listItems = cardInfoArr.map((el) => 
+    <ParagraphCard
+        key={el.id}
+        >
+        <CardTitle>
+            {el.title}
+        </CardTitle>
+        <CardDesc>
+            {el.description}
+        </CardDesc>
+    </ParagraphCard>
+) 
+
 const MainPage = () => {
 
     return (
@@ -141,8 +172,10 @@ const MainPage = () => {
             <SectionParagraph>
                 <TwoMainHead>Also very important title</TwoMainHead>
                 <ParagraphWrapper>
-                    <ParagraphCard></ParagraphCard>
+                    {listItems}
                 </ParagraphWrapper>
+                <ButtonContacts 
+                    title='Contact us'/>
             </SectionParagraph>
 
         </Main>

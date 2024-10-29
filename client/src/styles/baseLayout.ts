@@ -9,3 +9,6 @@ export const backgroundLightGrey = css `
 export const backgroundDarkGrey = css `
     background-color: rgb(205,205,205);
 `
+export const colorLightGrey = css `
+    color: rgb(120,120,120);
+`
