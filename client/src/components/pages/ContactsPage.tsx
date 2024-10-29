@@ -6,6 +6,7 @@ import {
 import { FormGroup, Input, InputLabel,} from "@mui/material";
 import ButtonSubmit from "../UI/button/ButtonSubmit";
 import { useState } from "react";
+import { useDebouncedCallback } from "use-debounce";
 
 const Main = styled.main `
     ${centeringStyle};
@@ -28,13 +29,27 @@ const ContactsPage = () => {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
     
-    const debounce = (fn: Function, ms = 300) => {
-        let timeoutId: ReturnType<typeof setTimeout>;
-        return function (this: any, ...args: any[]) {
-          clearTimeout(timeoutId);
-          timeoutId = setTimeout(() => fn.apply(this, args), ms);
-        };
-      };
+    const [value, setValue] = useState('');
+    
+    const debounced = useDebouncedCallback(
+      (value) => {
+        setValue(value);
+      },
+
+      1000
+    );
+
+    const sendingData = () => {
+        const formData = new FormData()
+
+        if(name && email && message !== '') {
+            formData.append('name', name)
+            formData.append('email', email)
+            formData.append('message', message)
+        } else {
+            alert('Пустых значений в форме быть не должно. Введите заново')
+        }
+    }
 
     return (
         <Main>
@@ -45,25 +60,23 @@ const ContactsPage = () => {
                         <Input 
                             placeholder="Value" 
                             autoFocus={true}
-                            value={name}
-                            onChange={e => debounce(() => 
-                                {setName(e.target.value)}, 500)}
+                            onChange={(e) => debounced(setName(e.target.value))}
+                            type="text"
+                            name="name"
                             />
                         <InputLabel>Email</InputLabel>
                         <Input 
                             placeholder="Value" 
-                            autoFocus={true}
-                            value={email}
-                            onChange={e => debounce(() => 
-                                {setEmail(e.target.value)}, 500)}                            />
+                            onChange={(e) => debounced(setEmail(e.target.value))}
+                            type="text"
+                            name="email"                          />
                         <InputLabel>Message</InputLabel>
                         <Input 
                             placeholder="Value" 
-                            autoFocus={true}
-                            value={message}
-                            onChange={e => debounce(() => 
-                                {setMessage(e.target.value)}, 500)}                            />
-                        <ButtonSubmit text="Submit"/>
+                            onChange={(e) => debounced(setMessage(e.target.value))}
+                            type="text"
+                            name="message"                            />
+                        <ButtonSubmit text="Submit" onClick={() => sendingData()}/>
                 </FormGroup>
             </WrapperForm>
         </Main>

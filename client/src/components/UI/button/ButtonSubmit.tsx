@@ -20,7 +20,7 @@ const Text = styled.span `
 `
 interface PropsButtonSubmit {
     text: string,
-    onClick?: () => {}
+    onClick?: () => void
 }
 const ButtonSubmit = (props: PropsButtonSubmit  ) => {
     
