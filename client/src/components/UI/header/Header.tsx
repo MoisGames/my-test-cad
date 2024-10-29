@@ -4,12 +4,12 @@ import ButtonContacts from "../button/ButtonContacts";
 const HeaderComponent = styled.header `
         display: flex;
         height: 10vh;
-        width: 65vw;
+        width: 62.5vw;
     `
     const WrapperHeader = styled.section `
         display: flex;
         justify-content: space-between;
-        width: 65vw;
+        width: 62.5vw;
     `
     const Title = styled.span `
         font-size: 18px;

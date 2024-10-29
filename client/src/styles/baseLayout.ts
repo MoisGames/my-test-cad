@@ -6,3 +6,6 @@ export const borderLine = css `
 export const backgroundLightGrey = css `
     background-color: rgb(245,245,245);
 `
+export const backgroundDarkGrey = css `
+    background-color: rgb(205,205,205);
+`
