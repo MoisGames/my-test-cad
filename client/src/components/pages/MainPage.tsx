@@ -40,8 +40,78 @@ const VideoContent = styled.iframe `
     ${backgroundDarkGrey}
 `
 const SectionParagraph = styled.section `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35px;
+`
+const TwoMainHead = styled.h2 `
     
 `
+const ParagraphWrapper = styled.div `
+    margin-top: 20px;
+    width: 60vw;
+    height: 40vh;
+    border: 3px solid violet;
+`
+const ParagraphCard = styled.article `
+    
+`
+interface CardInfo {
+    id: number,
+    title: string,
+    description: string,
+}
+const cardInfoObj: CardInfo[] = [
+    {
+    'id': 1,
+    'title': 'afas',
+    'description': 
+        `Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. 
+        Aliquam mattis, leo et condimentum`,
+    },
+    {
+        'id': 2,
+        'title': 'afas',
+        'description': 
+            `Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. 
+            Aliquam mattis, leo et condimentum`,
+    },
+    {
+        'id': 3,
+        'title': 'afas',
+        'description': 
+            `Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. 
+            Aliquam mattis, leo et condimentum`,
+    },
+    {
+        'id': 4,
+        'title': 'afas',
+        'description': 
+        `Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. 
+        Aliquam mattis, leo et condimentum`,
+    },
+    {
+        'id': 5,
+        'title': 'afas',
+        'description': 
+            `Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. 
+            Aliquam mattis, leo et condimentum`,
+    },
+    {
+        'id': 6,
+        'title': 'afas',
+        'description': 
+            `Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. 
+            Aliquam mattis, leo et condimentum`,
+    },]
 const MainPage = () => {
 
     return (
@@ -68,6 +138,12 @@ const MainPage = () => {
                     web-share" 
                     ></VideoContent>
             </SectionVideo>
+            <SectionParagraph>
+                <TwoMainHead>Also very important title</TwoMainHead>
+                <ParagraphWrapper>
+                    <ParagraphCard></ParagraphCard>
+                </ParagraphWrapper>
+            </SectionParagraph>
 
         </Main>
     );

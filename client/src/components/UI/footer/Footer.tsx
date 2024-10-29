@@ -2,9 +2,6 @@ import styled from "styled-components"
 import { borderLine } from "../../../styles/baseLayout";
 
 const FooterComponent = styled.footer `
-        position: fixed;
-        left: 0;
-        bottom: 0;
         width: 62.5vw;
         ${borderLine}
     `
