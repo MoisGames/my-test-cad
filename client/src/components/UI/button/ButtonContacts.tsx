@@ -19,6 +19,7 @@ const Button = styled.button `
     height: 25px;
     width: 10vw;
     margin: 20px 20px 20px 40px;
+    cursor: pointer;
 `
 const Text = styled.span `
     font-size: 12px;

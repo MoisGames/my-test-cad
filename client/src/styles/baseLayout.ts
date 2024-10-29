@@ -20,3 +20,6 @@ export const centeringStyle = css `
     justify-content: center;
     align-items: center;
 `
+export const standartWidth = css `
+    width: 64vw;
+`

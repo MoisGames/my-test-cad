@@ -4,14 +4,15 @@ import {
             backgroundLightGrey, 
             borderLine, 
             centeringStyle, 
-            colorLightGrey} from '../../styles/baseLayout';
+            colorLightGrey,
+            standartWidth} from '../../styles/baseLayout';
 import ButtonContacts from '../UI/button/ButtonContacts';
 
 const Main = styled.main `
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        width: 62.5vw;
+        ${standartWidth}
         overflow: hidden;
         ${borderLine}
     `
@@ -53,7 +54,6 @@ const TwoMainHead = styled.h2 `
 const ParagraphWrapper = styled.div `
     display: flex;
     flex-wrap: wrap;
-    width: 62.5vw;
     margin-top: 80px;
     width: 60vw;
     height: 40vh;
@@ -77,7 +77,6 @@ const CardDesc = styled.span `
 const SectionParagraphTwo = styled.section `
     ${centeringStyle}
     flex-direction: column;
-    width: 62.5vw;
     height: 30vh;
     ${backgroundLightGrey}
 `
