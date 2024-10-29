@@ -3,6 +3,7 @@ import ButtonContacts from "../button/ButtonContacts";
 
 const HeaderComponent = styled.header `
         display: flex;
+        height: 10vh;
         width: 65vw;
     `
     const WrapperHeader = styled.section `
@@ -10,9 +11,10 @@ const HeaderComponent = styled.header `
         justify-content: space-between;
         width: 65vw;
     `
-    const Title = styled.h1 `
+    const Title = styled.span `
         font-size: 18px;
-        margin: 20px;
+        font-weight: 900;
+        margin: 30px 30px 30px 20px;
     `
 
 const Header = () => {

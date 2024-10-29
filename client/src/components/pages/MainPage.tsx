@@ -9,12 +9,17 @@ const Main = styled.main `
         overflow: hidden;
         ${borderLine}
     `
+const SectionVideo = styled.section `
+    
+`
 
 const MainPage = () => {
 
     return (
         <Main>
-             
+            <SectionVideo>
+                
+            </SectionVideo>
         </Main>
     );
 };
