@@ -1,25 +1,32 @@
 import styled from "styled-components";
 import ButtonContacts from "../button/ButtonContacts";
 
-const Header = () => {
-    const Header = styled.header `
-        display: flex;
-        width: 60vw;
+const HeaderComponent = styled.header `
         position: fixed;
-        justify-content: space-between;
+        left: 0;
+        right: 0;
+        width: 65vw;
+    `
+    const WrapperHeader = styled.main `
+        
     `
     const Title = styled.h5 `
 
         margin: 20px;
     `
+
+const Header = () => {
+    
     return (
-        <Header>
-            <Title>
-                Some Company
-            </Title>
-            <ButtonContacts 
-                title="Contact us"/>
-        </Header>
+        <HeaderComponent>
+            <WrapperHeader>
+                <Title>
+                    Some Company
+                </Title>
+                <ButtonContacts 
+                    title="Contact us"/>
+            </WrapperHeader>
+        </HeaderComponent>
     );
 };
 

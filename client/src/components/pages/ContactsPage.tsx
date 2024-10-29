@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-const ContactsPage = () => {
-    const Main = styled.main `
+const Main = styled.main `
         
-    `
+`
+
+const ContactsPage = () => {
+
     return (
         <Main>
             CONTACTS

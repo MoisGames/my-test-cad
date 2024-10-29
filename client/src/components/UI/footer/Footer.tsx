@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { borderLine } from "../../../styles/baseLayout";
 
-const Footer = () => {
-    const Footer = styled.footer `
+const FooterComponent = styled.footer `
         position: fixed;
         left: 0;
         bottom: 0;
@@ -18,12 +17,15 @@ const Footer = () => {
         display: flex;
         margin: 50px;
     `
+
+const Footer = () => {
+    
     return (
-        <Footer>
+        <FooterComponent>
             <WrapperFooter>
                 <Text>Some Company 2024</Text>
             </WrapperFooter>
-        </Footer>
+        </FooterComponent>
     );
 };
 
