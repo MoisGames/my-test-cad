@@ -3,6 +3,7 @@ import {
     backgroundDarkGrey,
             backgroundLightGrey, 
             borderLine, 
+            centeringStyle, 
             colorLightGrey} from '../../styles/baseLayout';
 import ButtonContacts from '../UI/button/ButtonContacts';
 
@@ -42,10 +43,8 @@ const VideoContent = styled.iframe `
     ${backgroundDarkGrey}
 `
 const SectionParagraph = styled.section `
-    display: flex;
+    ${centeringStyle}
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 35px;
 `
 const TwoMainHead = styled.h2 `
@@ -75,6 +74,17 @@ const CardDesc = styled.span `
     font-size: 13px;
     ${colorLightGrey};
 `
+const SectionParagraphTwo = styled.section `
+    ${centeringStyle}
+    flex-direction: column;
+    width: 62.5vw;
+    height: 30vh;
+    ${backgroundLightGrey}
+`
+const ThreeHead = styled.h3 `
+    
+`
+
 interface CardInfo {
     id: number,
     title: string,
@@ -159,13 +169,13 @@ const MainPage = () => {
                 </BlockText>
                 <VideoContent 
                     src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=ySH8ELQ1T58ATguy" 
-                    title="YouTube Video" 
-                    allow="accelerometer; 
-                    autoplay; 
-                    clipboard-write; 
-                    encrypted-media; 
-                    gyroscope; 
-                    picture-in-picture; 
+                    title="YouTube Video"
+                    allow="accelerometer
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
                     web-share" 
                     ></VideoContent>
             </SectionVideo>
@@ -177,7 +187,14 @@ const MainPage = () => {
                 <ButtonContacts 
                     title='Contact us'/>
             </SectionParagraph>
-
+            <SectionParagraphTwo>
+                <ThreeHead>
+                    Less important title
+                </ThreeHead>
+                <ButtonContacts 
+                    title='Contact us'
+                    />
+            </SectionParagraphTwo>
         </Main>
     );
 };

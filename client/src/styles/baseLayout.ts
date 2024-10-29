@@ -12,3 +12,11 @@ export const backgroundDarkGrey = css `
 export const colorLightGrey = css `
     color: rgb(120,120,120);
 `
+export const colorButtonContacts = css `
+    background-color: #343434;
+`
+export const centeringStyle = css `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import { centeringStyle, colorButtonContacts } from '../../../styles/baseLayout';
 
 export interface PropsButtonInterface
         extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,13 +10,11 @@ export interface PropsButtonInterface
     }
 
 const Button = styled.button `
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${centeringStyle}
     padding: 10px;
-    background-color: black;
+    ${colorButtonContacts}
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     height: 25px;
     width: 10vw;
