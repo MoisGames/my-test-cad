@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { 
-    backgroundDarkGrey,
             backgroundLightGrey, 
             borderLine, 
             centeringStyle, 
             colorLightGrey,
             standartWidth} from '../../styles/baseLayout';
 import ButtonContacts from '../UI/button/ButtonContacts';
+import LiteYoutubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 const Main = styled.main `
         display: flex;
@@ -26,10 +27,12 @@ const SectionVideo = styled.section `
     font-size: 30px;
     ${backgroundLightGrey};
     @media (max-width: 768px) {
-            width: 100%;
+            flex-direction: column;
             flex-wrap: wrap;
+            width: 100%;
+            height: 70vh;
+            justify-content: start;
         }
-    
 `
 const BlockText = styled.article `
     display: flex;
@@ -49,10 +52,9 @@ const MinorText = styled.span `
     font-weight: 100;
     margin-top: 20px;
 `
-const VideoContent = styled.iframe `
-    width: 30vw;
-    height: 25vh;
-    ${backgroundDarkGrey}
+const VideoFrame = styled.div `
+    width: 25vw;
+    height: 12vh;
     @media (max-width: 768px) {
             width: 100%;
         }
@@ -187,17 +189,12 @@ const MainPage = () => {
                         tincidunt ante
                     </MinorText>
                 </BlockText>
-                <VideoContent 
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=ySH8ELQ1T58ATguy" 
-                    title="YouTube Video"
-                    allow="accelerometer
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share" 
-                    ></VideoContent>
+                <VideoFrame>
+                    <LiteYoutubeEmbed
+                        id="dQw4w9WgXcQ"
+                        title="Youtube Video"
+                    />
+                </VideoFrame>
             </SectionVideo>
             <SectionParagraph>
                 <TwoMainHead>Also very important title</TwoMainHead>

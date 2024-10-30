@@ -19,7 +19,6 @@ const Main = styled.main `
             width: 100%;
         }
 `
-
 const ContactsHead = styled.h1 `
     margin: 40px;
 `
