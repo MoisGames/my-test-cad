@@ -7,6 +7,8 @@ import { FormGroup, Input, InputLabel,} from "@mui/material";
 import ButtonSubmit from "../UI/button/ButtonSubmit";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
+import { sendData } from "../../htttp/testAPI";
+import { log } from "console";
 
 const Main = styled.main `
     ${centeringStyle};
@@ -24,10 +26,18 @@ const WrapperForm = styled.div `
     border-radius: 5px;
     padding: 20px;
 `
+const MessageWrapper = styled.span `
+    font-size: 30px;
+    font-weight: 900;
+`
+const FormWrapper = styled.div `
+`
 const ContactsPage = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+    const [show,setShow] = useState(true)
+    const [messageServer, setMessageServer] = useState('')
     
     const [value, setValue] = useState('');
     
@@ -40,12 +50,16 @@ const ContactsPage = () => {
     );
 
     const sendingData = () => {
-        const formData = new FormData()
+        
+        const formData = {
+            name: name,
+            email: email,
+            message: message
+        }
 
         if(name && email && message !== '') {
-            formData.append('name', name)
-            formData.append('email', email)
-            formData.append('message', message)
+            sendData(formData).then(data => setMessageServer(data));
+            setShow(false)
         } else {
             alert('Пустых значений в форме быть не должно. Введите заново')
         }
@@ -53,7 +67,9 @@ const ContactsPage = () => {
 
     return (
         <Main>
-            <ContactsHead>Only CTA on the page</ContactsHead>
+            { show ?
+            <FormWrapper>
+                    <ContactsHead>Only CTA on the page</ContactsHead>
             <WrapperForm>
                 <FormGroup>
                         <InputLabel>Name</InputLabel>
@@ -79,6 +95,11 @@ const ContactsPage = () => {
                         <ButtonSubmit text="Submit" onClick={() => sendingData()}/>
                 </FormGroup>
             </WrapperForm>
+            </FormWrapper>
+            :
+            <MessageWrapper>
+                {messageServer}
+            </MessageWrapper>}
         </Main>
     );
 };
