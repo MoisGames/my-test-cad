@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const $host = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "https://my-test-cad-serve.vercel.app/"
 })
 
 export {$host}
