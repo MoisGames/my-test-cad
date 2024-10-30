@@ -4,6 +4,9 @@ import { borderLine } from "../../../styles/baseLayout";
 const FooterComponent = styled.footer `
         width: 62.5vw;
         ${borderLine}
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     `
     const WrapperFooter = styled.section `
         display: flex;

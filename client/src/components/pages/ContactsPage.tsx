@@ -8,7 +8,6 @@ import ButtonSubmit from "../UI/button/ButtonSubmit";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { sendData } from "../../htttp/testAPI";
-import { log } from "console";
 
 const Main = styled.main `
     ${centeringStyle};
@@ -16,7 +15,11 @@ const Main = styled.main `
     ${backgroundLightGrey};
     ${standartWidth};
     height: 87vh;
+    @media (max-width: 768px) {
+            width: 100%;
+        }
 `
+
 const ContactsHead = styled.h1 `
     margin: 40px;
 `
@@ -25,10 +28,12 @@ const WrapperForm = styled.div `
     border: 1px solid grey;
     border-radius: 5px;
     padding: 20px;
+    margin: 20px;
 `
 const MessageWrapper = styled.span `
     font-size: 30px;
     font-weight: 900;
+    margin: 20px;
 `
 const FormWrapper = styled.div `
 `

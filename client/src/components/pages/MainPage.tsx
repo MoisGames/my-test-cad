@@ -15,6 +15,9 @@ const Main = styled.main `
         ${standartWidth}
         overflow: hidden;
         ${borderLine}
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     `
 const SectionVideo = styled.section `
     display: flex;
@@ -22,12 +25,20 @@ const SectionVideo = styled.section `
     padding: 25px 20px 20px 35px;
     font-size: 30px;
     ${backgroundLightGrey};
+    @media (max-width: 768px) {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    
 `
 const BlockText = styled.article `
     display: flex;
     flex-direction: column;
     width: 20vw;
     height: 30vh;
+    @media (max-width: 768px) {
+            width: 100%;
+        }
 `
 const MainHead = styled.h1` 
 
@@ -42,6 +53,9 @@ const VideoContent = styled.iframe `
     width: 30vw;
     height: 25vh;
     ${backgroundDarkGrey}
+    @media (max-width: 768px) {
+            width: 100%;
+        }
 `
 const SectionParagraph = styled.section `
     ${centeringStyle}
@@ -57,6 +71,10 @@ const ParagraphWrapper = styled.div `
     margin-top: 80px;
     width: 60vw;
     height: 40vh;
+    @media (max-width: 768px) {
+            width: 100%;
+            height: 100%;
+        }
 `
 const ParagraphCard = styled.article `
     display: flex;
@@ -64,6 +82,9 @@ const ParagraphCard = styled.article `
     width: 24%;
     height: 10vh;
     margin: 40px;
+    @media (max-width: 768px) {
+            width: 100%;
+        }
 `
 const CardTitle = styled.h4 `
     font-size: 19px;

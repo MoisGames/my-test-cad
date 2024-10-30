@@ -20,6 +20,12 @@ const Button = styled.button `
     width: 10vw;
     margin: 20px 20px 20px 40px;
     cursor: pointer;
+    @media (max-width: 768px) {
+            width: 25vw;
+            padding: 15px;
+            height: 2vh;
+            margin: 10px;
+        }
 `
 const Text = styled.span `
     font-size: 12px;

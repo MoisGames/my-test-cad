@@ -23,3 +23,10 @@ export const centeringStyle = css `
 export const standartWidth = css `
     width: 64vw;
 `
+export const adaptiveMaketColumn = css `
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        width: 100%;
+        height: 20vh;
+`
