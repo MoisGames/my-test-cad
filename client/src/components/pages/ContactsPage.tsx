@@ -43,18 +43,23 @@ const ContactsPage = () => {
     const [show,setShow] = useState(true)
     const [messageServer, setMessageServer] = useState('')
     
-    const [value, setValue] = useState('');
-    
-    const debounced = useDebouncedCallback(
-      (value) => {
-        setValue(value);
-      },
-
-      1000
-    );
+    const debouncedName = useDebouncedCallback(
+        (value) => {
+            setName(value)
+        }
+    )
+    const debouncedEmail = useDebouncedCallback(
+        (value) => {
+            setEmail(value)
+        }
+    )
+    const debouncedMessage = useDebouncedCallback(
+        (value) => {
+            setMessage(value)
+        }
+    )
 
     const sendingData = () => {
-        
         const formData = {
             name: name,
             email: email,
@@ -80,23 +85,28 @@ const ContactsPage = () => {
                         <Input 
                             placeholder="Value" 
                             autoFocus={true}
-                            onChange={(e) => debounced(setName(e.target.value))}
+                            onChange={(e) => debouncedName(e.target.value)}
                             type="text"
                             name="name"
                             />
                         <InputLabel>Email</InputLabel>
                         <Input 
                             placeholder="Value" 
-                            onChange={(e) => debounced(setEmail(e.target.value))}
+                            onChange={(e) => debouncedEmail(e.target.value)}
                             type="text"
-                            name="email"                          />
+                            name="email"
+                            />
                         <InputLabel>Message</InputLabel>
                         <Input 
                             placeholder="Value" 
-                            onChange={(e) => debounced(setMessage(e.target.value))}
+                            onChange={(e) => debouncedMessage(e.target.value)}
                             type="text"
-                            name="message"                            />
-                        <ButtonSubmit text="Submit" onClick={() => sendingData()}/>
+                            name="message"  
+                            />
+                        <ButtonSubmit 
+                            text="Submit" 
+                            onClick={() => sendingData()}
+                            />
                 </FormGroup>
             </WrapperForm>
             </FormWrapper>
